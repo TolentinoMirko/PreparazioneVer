@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContainerComponent implements OnInit {
   names  : string[];
   constructor() { 
-    this.names = ['Escavatori','Terne','Pale']
+    this.names = ['Escavatori','Terne','Pale'];
   }
  
   ngOnInit(): void {

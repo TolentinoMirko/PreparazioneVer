@@ -1,5 +1,7 @@
-<ul>
-    <li *NgFor = "let macc of names">
-        <app-macchina [name] = "macc"></app-macchina>
-    </li>
-</ul>
+
+<div class="card-deck">
+    <div class="card" *ngFor = "let name of names">
+        <app-macchina [name] = "name"></app-macchina>
+  
+      </div>
+</div>
