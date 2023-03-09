@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import{HttpClient} from '@angular/common/http'
 
 //per generare un servizio bisogna scrivere ng generate service food
 
@@ -8,5 +9,5 @@ import { Injectable } from '@angular/core';
 })
 export class FoodService {
 
-  constructor() { }
+  constructor(private http : HttpClient) {}
 }
