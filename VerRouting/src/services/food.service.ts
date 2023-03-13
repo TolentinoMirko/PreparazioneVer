@@ -10,4 +10,12 @@ import{HttpClient} from '@angular/common/http'
 export class FoodService {
 
   constructor(private http : HttpClient) {}
+
+SearchFoods(query: string){
+  const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${query}&json=true`; //ogni volta che si fa una richiesta l'api ci DEVE ritornare un JSON 
+  
+  let obsFood = this.http.get(url);
+  return obsFood;
+
+}
 }
