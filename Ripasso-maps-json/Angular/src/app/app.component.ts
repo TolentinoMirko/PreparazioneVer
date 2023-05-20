@@ -61,8 +61,8 @@ export class AppComponent implements OnInit {
 
     this.http.get<Prova[]>("https://5000-tolentinomi-preparazion-il25ujjahob.ws-eu97.gitpod.io/noncapisconulla").subscribe(data =>{
      for (let d of data) {
-      let lng = d[0]
-      let lat = d[1]
+      let lng = d.lng
+      let lat = d.lat
       let marker: Marker = new Marker(lat, lng);
       this.markers.push(marker)
      }
