@@ -1,4 +1,4 @@
 class Point {
-    lat: number = 0;
-    lng: number = 0;
+    lat: number;
+    lng: number;
   }
