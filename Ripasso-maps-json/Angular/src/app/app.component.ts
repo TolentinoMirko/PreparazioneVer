@@ -5,7 +5,12 @@ import { GeoFeatureCollection } from 'src/models/geojson.model';
 import { Marker } from 'src/models/marker.model';
 import { Prova } from 'src/models/prova.model';
 
+//ricordati nell'index.html di mettere lo script:
+// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_z624KbEac7jy2TdIXtWT4uqWcgW90Vg"></script><!--da copiare e incollare-->
 
+//ricordati nel app.modeule.ts di mettere tutti gli import 
+//quando avvii il file angular per sicurezza scrivi : ng serve --disable-host-check --host=0.0.0.0
+// e quando avvii accertati che la porta di python sia aperta
 
 @Component({
   selector: 'app-root',
@@ -21,7 +26,7 @@ export class AppComponent implements OnInit {
   markers!: Marker[];  //Vettore con tutti i marker
 
 
-  url!: "https://5000-tolentinomi-preparazion-lmty2y4ie8w.ws-eu97.gitpod.io/noncapisconulla";
+  url!: "https://5000-tolentinomi-preparazion-lmty2y4ie8w.ws-eu97.gitpod.io/noncapisconulla"; //url della route in cui si trova il json
 
   constructor(public http: HttpClient) {
   }
@@ -48,7 +53,7 @@ export class AppComponent implements OnInit {
     //Uso di un ciclo foreach per riempire i marker
     this.markers = [];
 
-// richiesta al server python
+// richiesta al server python se ci danno un geojson
   //  this.http.get<GeoFeatureCollection>(this.url).subscribe(data => {
   //   for (let feature of data.features) {
   //      let lng = feature.geometry.coordinates[0][0][0];
@@ -59,11 +64,14 @@ export class AppComponent implements OnInit {
   //  }
   //  })
 
+
+
+                  //prova è il modello dove trasforma il json inviato nelle variabili li scritti 
     this.http.get<Prova[]>("https://5000-tolentinomi-preparazion-lmty2y4ie8w.ws-eu97.gitpod.io/noncapisconulla").subscribe(data =>{
-     for (let d of data) {
-      let lng = d.lng
+     for (let d of data) { //questo let permette di fare un ciclo all'interno di data(dove c'è il json)
+      let lng = d.lng //mette le variabili lng e lat le proprietà lng e lat del json
       let lat = d.lat
-      let marker: Marker = new Marker(lat, lng);
+      let marker: Marker = new Marker(lat, lng);//mette le coordinate del marker
       this.markers.push(marker)
      }
     })
