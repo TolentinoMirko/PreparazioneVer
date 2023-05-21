@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   markers!: Marker[];  //Vettore con tutti i marker
 
 
-  url!: "https://5000-tolentinomi-preparazion-il25ujjahob.ws-eu97.gitpod.io/noncapisconulla";
+  url!: "https://5000-tolentinomi-preparazion-lmty2y4ie8w.ws-eu97.gitpod.io/noncapisconulla";
 
   constructor(public http: HttpClient) {
   }
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
   //  }
   //  })
 
-    this.http.get<Prova[]>("https://5000-tolentinomi-preparazion-il25ujjahob.ws-eu97.gitpod.io/noncapisconulla").subscribe(data =>{
+    this.http.get<Prova[]>("https://5000-tolentinomi-preparazion-lmty2y4ie8w.ws-eu97.gitpod.io/noncapisconulla").subscribe(data =>{
      for (let d of data) {
       let lng = d.lng
       let lat = d.lat

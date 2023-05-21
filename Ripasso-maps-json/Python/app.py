@@ -7,7 +7,7 @@ CORS(app)
 
 @app.route("/noncapisconulla")
 def gjs():
-    return send_file('prova.json')
+    return send_file('prova.json') #nella route /noncapisconulla sarà presente il file prova.json
 
 if __name__ == "__main__":
     app.run()
