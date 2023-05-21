@@ -1,5 +1,5 @@
-<google-map>
-  <map-marker *ngFor="let m of markers; let i = index" [position]="{'lat': m.lat, 'lng': m.lng}" [label]="'marker'" [title]=" 'ciao'">
+<google-map [center]="center">
+  <map-marker   *ngFor="let m of markers; let i = index" [position]="{'lat': m.lat, 'lng': m.lng}" [label]="'marker'" [title]=" 'ciao'">
     
   </map-marker>
 

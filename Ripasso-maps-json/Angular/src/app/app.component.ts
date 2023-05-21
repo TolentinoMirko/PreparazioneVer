@@ -27,8 +27,11 @@ export class AppComponent implements OnInit {
 
 
   url!: "https://5000-tolentinomi-preparazion-lmty2y4ie8w.ws-eu97.gitpod.io/noncapisconulla"; //url della route in cui si trova il json
+  center:any;
 
   constructor(public http: HttpClient) {
+    this.center={lat: 45.58586727291713, lng: 10.29190643953763}; //aggiunger un centro appena entriamo su google maps
+
   }
 
   ngOnInit() {
